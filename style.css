@@ -109,19 +109,21 @@ body {
 }
 
 #final-screen {
-    position: absolute;
+    position: fixed;      
     inset: 0;
-    background: rgba(0, 0, 0, 0.96);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.97);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;    
     text-align: center;
-    padding: 25px;
+    padding: 40px 20px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 1.5s ease;
-
     overflow-y: auto;           
+    z-index: 9999;              
 }
 
 
@@ -131,15 +133,14 @@ body {
 }
 
 #final-message {
-    font-size: 18px;          
+    font-size: 18px;
     line-height: 1.8;
     letter-spacing: 1px;
     color: #00ff88;
     text-shadow: 0 0 20px #00ff88;
     white-space: pre-line;
-    max-width: 95%;
-    padding-bottom: 40px;       
-
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 
