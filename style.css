@@ -1,0 +1,139 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #000;
+    color: #00ff88;
+    font-family: "Courier New", Courier, monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#terminal {
+    width: 95%;
+    max-width: 600px;
+    height: 90vh;
+    background-color: #000;
+    padding: 20px;
+    border: 1px solid #00ff88;
+    overflow-y: auto;
+    box-shadow: 0 0 15px #00ff88;
+    position: relative; 
+}
+
+#output {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+#input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#prompt {
+    margin-right: 5px;
+}
+
+#cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background-color: #00ff88;
+    animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+#terminal::-webkit-scrollbar {
+    width: 4px;
+}
+
+#terminal::-webkit-scrollbar-thumb {
+    background-color: #00ff88;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#gallery {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    animation: fadeIn 1s ease forwards;
+}
+
+#gallery img {
+    width: 100%;
+    border: 1px solid #00ff88;
+    box-shadow: 0 0 10px #00ff88;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s ease;
+}
+
+#gallery img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.memory-mode {
+    background-color: #020202;
+    box-shadow: 0 0 30px #00ff88;
+}
+
+#final-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+}
+
+#final-screen.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#final-message {
+    font-size: 20px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: #00ff88;
+    text-shadow: 0 0 20px #00ff88;
+    white-space: pre-line;
+    max-width: 90%;
+}
+
